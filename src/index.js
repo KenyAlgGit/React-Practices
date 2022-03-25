@@ -33,9 +33,15 @@ import App from './App';
 
 //chapter 2.1 insert an element
 ReactDOM.render(
-  //below is the element you want to add
-    <App />, //this is the element id
-  
+  <React.Fragment>
+  {/* //below is the element you want to add */}
+    <App />
+    <Apptwo></Apptwo>
+  </React.Fragment>,
   //below is the location id you want it to add into
   document.getElementById('root') 
 );
+
+function Apptwo(){
+  return<h1>This is the second app</h1>
+}
