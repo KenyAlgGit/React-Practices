@@ -33,6 +33,8 @@ import App from './App';
 
 //chapter 2.1 insert an element
 ReactDOM.render(
+  //using fragment could reduce adding tags into the page
+  //this could make the page more flexible
   <React.Fragment>
   {/* //below is the element you want to add */}
     <App />
