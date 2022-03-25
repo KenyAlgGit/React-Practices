@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
+import restaurant from "./restaurant.jpg"
 
 //create a list of dishes, this is a array obj
 const dishes=[
@@ -29,6 +30,11 @@ function Main(props){
   return(
     <section>
       <p>We serve the most {props.adjective} food around</p>
+      <img 
+        src={restaurant} 
+        height="400px"
+        alt="Enjoy all the delicious"
+      ></img>
       <ul style = {  {textAlign:"left"}  }>
         {props.dishes.map ((dish) => 
           <li key = {dish.id} >
