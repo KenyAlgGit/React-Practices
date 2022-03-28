@@ -2,26 +2,31 @@
 import './App.css';
 import restaurant from "./restaurant.jpg"
 
-function SecretComponent(){
-  return <h1>Super secret information for authorized users only</h1>;
-}
+import React, {useState} from "react"
 
-function RegularComponent(){
-  return <h1>Everyone could see this component.</h1>;
-}
+function App() {
+  const what = useState("Happy")//use Stage created a array, here it's the 'what'
+  console.log(what)
 
-function App(props) {
-  // use a shorter case expression
+  const [emotion, setEmotion] = useState("happy")//here 'emotion' means the first element of this array, now is 'happy'
+  //this means, the default value is 'happy'
   return (
-    <>{props.authorized ? <SecretComponent></SecretComponent> : <RegularComponent></RegularComponent>}</>
+    <>
+      <h1>Current emotion is {emotion}</h1>
+
+      <button onClick = { () => setEmotion("happy") }>
+        Happy
+      </button>
+
+      <button onClick = { () => setEmotion("frustrated") }>
+        Frustrated
+      </button>
+
+      <button onClick = { () => setEmotion("ethusiastic") }>
+        Ethuse
+      </button>
+    </>
   )
-  
-    // if(props.authorized){
-    //   return <SecretComponent></SecretComponent>
-    // }
-    // else{
-    //   return <RegularComponent></RegularComponent>
-    // }
 }
 
 export default App;
