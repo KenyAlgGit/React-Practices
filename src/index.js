@@ -3,33 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-//chapter 1.1
-/*ReactDOM.render(
-  //below is the element you want to add
-  React.createElement("h1", {style: {color:"blue"}}, "Hello World, this is React!"), 
-  //(tag name, property setting, text)
-  
-  //below is the location id you want it to add into
-  document.getElementById('root') 
-);*/
+// const checklist=["boots", "tent", "headlamp"]
+// console.log(checklist[0])
 
-
-//chapter 1.2 create a list of items
-// ReactDOM.render(
-//   //below is the element you want to add
-//   React.createElement(
-//     "ul",
-//     null, 
-//     React.createElement("li",null,"Monday"),
-//     React.createElement("li",null,"Tuesday"),
-//     React.createElement("li",null,"Wednesday"),
-//     React.createElement("li",null,"Thursday"),
-//     React.createElement("li",null,"Friday"),
-//     ), 
-  
-//   //below is the location id you want it to add into
-//   document.getElementById('root') 
-// );
+//choose which one to be displayed
+const [item1,,item2]=["boots", "tent", "headlamp"]
+console.log(item2, item1)
 
 //chapter 2.1 insert an element
 ReactDOM.render(
@@ -38,12 +17,7 @@ ReactDOM.render(
   <React.Fragment>
   {/* this is a switch */}
     <App authorized={false}/>
-    <Apptwo></Apptwo>
   </React.Fragment>,
   //below is the location id you want it to add into
   document.getElementById('root') 
 );
-
-function Apptwo(){
-  return<h1>This is the second app</h1>
-}
