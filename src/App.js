@@ -12,12 +12,12 @@ function RegularComponent(){
 
 function App(props) {
   // use a shorter case expression
-  return 
-  (
-    <>
-      {props.authorized ? <SecretComponent></SecretComponent> : <RegularComponent></RegularComponent>}
-    </>
+  return (
+  <>
+    {props.authorized ? <SecretComponent></SecretComponent> : <RegularComponent></RegularComponent>}
+  </>
   )
+    
     // if(props.authorized){
     //   return <SecretComponent></SecretComponent>
     // }
