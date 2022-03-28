@@ -36,8 +36,8 @@ ReactDOM.render(
   //using fragment could reduce adding tags into the page
   //this could make the page more flexible
   <React.Fragment>
-  {/* //below is the element you want to add */}
-    <App />
+  {/* this is a switch */}
+    <App authorized={false}/>
     <Apptwo></Apptwo>
   </React.Fragment>,
   //below is the location id you want it to add into

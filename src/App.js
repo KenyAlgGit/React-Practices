@@ -2,67 +2,28 @@
 import './App.css';
 import restaurant from "./restaurant.jpg"
 
-//create a list of dishes, this is a array obj
-const dishes=[
-  "Macaroni and Cheese",
-  "Salmon",
-  "Tofu with vegetables",
-  "Sushi"
-]
-const dishObj = dishes.map((dish, i) => ({id: i, title: dish}))
-
-// this is testing whether this list working fine before inserting into use
-//dishes.map((dish)=>console.log(dish))
-
-//a component is a function
-function Header(props){
-  console.log(props)
-  return(
-    <header>
-      <h1>{props.name}'s Kitchen</h1> 
-      {/* using parameters here */}
-    </header>
-  )
-}
-//notice the {} having parameters
-//notice the lamda format this is using
-function Main(props){
-  return(
-    <section>
-      <p>We serve the most {props.adjective} food around</p>
-      <img 
-        src={restaurant} 
-        height="400px"
-        alt="Enjoy all the delicious"
-      ></img>
-      <ul style = {  {textAlign:"left"}  }>
-        {props.dishes.map ((dish) => 
-          <li key = {dish.id} >
-            {dish.title}
-          </li>
-        )}
-      </ul>
-    </section>
-  )
+function SecretComponent(){
+  return <h1>Super secret information for authorized users only</h1>
 }
 
-function Footer(props){
-  return(
-    <footer>
-      <p>Copyright {props.year}</p>
-    </footer>
-  )
+function RegularComponent(){
+  return <h1>Everyone could see this component.</h1>
 }
 
-function App() {
-  return (
-    <div className="App">
-      <Header name="Dan"></Header> 
-      {/* render the sub-component into the parent one */}
-      <Main adjective="amazing" dishes={dishObj}></Main>
-      <Footer year={new Date().getFullYear()}></Footer>
-    </div>
-  );
+function App(props) {
+  // use a shorter case expression
+  return 
+  (
+    <>
+      {props.authorized ? <SecretComponent></SecretComponent> : <RegularComponent></RegularComponent>}
+    </>
+  )
+    // if(props.authorized){
+    //   return <SecretComponent></SecretComponent>
+    // }
+    // else{
+    //   return <RegularComponent></RegularComponent>
+    // }
 }
 
 export default App;
