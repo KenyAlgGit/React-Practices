@@ -26,7 +26,14 @@ function App({login}) {
   }, [])
 
   if(data){
-    return <div>{JSON.stringify(data)}</div>
+    return (
+      <div>
+        <h1>Name: {data.name}</h1>
+        <h2>Git: {data.login}</h2>
+        <p>Location: {data.location}</p>
+        <img alt={data.login} src={data.avatar_url}></img>
+      </div>
+    )
   }
   else{
     return <div>No user Available</div>
