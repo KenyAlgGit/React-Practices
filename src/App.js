@@ -4,7 +4,9 @@ import restaurant from "./restaurant.jpg"
 
 import React, {useState, useEffect, useReducer} from "react"
 
-function App() {
+//https://api.github.com/users/KenyAlgGit
+
+function App({login}) {
 
   // const [checked, setChecked] = useState(false)
   // //default value of 'checked' is false
@@ -14,17 +16,24 @@ function App() {
   //   //change "checked" value to true
   // }
 
-  const [checked, toggle] = useReducer( (checked) => !checked, false )
-  //default value of 'checked' is false
+  const [data, setData] = useState(null)
+  //default value is null
+
+  useEffect(() => {
+    fetch(`https://api.github.com/users/${login}`)
+    .then((response) => response.json())
+    .then(setData)
+  }, [])
+
+  if(data){
+    return <div>{JSON.stringify(data)}</div>
+  }
+  else{
+    return <div>No user Available</div>
+  }
 
   return (
-    <>
-      <input type='checkbox' 
-      value={checked}
-      onChange={ toggle }
-      />
-      <p>{checked ? "checked" : "not checked"}</p>
-    </>
+    <div></div>
   )
 }
 
