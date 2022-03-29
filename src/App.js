@@ -7,7 +7,10 @@ import{
   About,
   Event,
   Contact,
-  Whoops404
+  Whoops404,
+  Services,
+  CompanyHistory,
+  Location
 } from "./pages"
 
 import React, {useState, useEffect, useReducer} from "react"
@@ -19,8 +22,12 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/about" element={<About/>}/>
+        <Route path="/" element={<Home/>} />
+        <Route path="/about" element={<About/>} >
+          <Route path="services" element={<Services/>} />
+          <Route path="companyHistory" element={<CompanyHistory/>} />
+          <Route path="location" element={<Location/>} />
+        </Route>
         <Route path="/event" element={<Event/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="*" element={<Whoops404/>}/>
