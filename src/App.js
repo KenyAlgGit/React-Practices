@@ -6,7 +6,8 @@ import{
   Home,
   About,
   Event,
-  Contact
+  Contact,
+  Whoops404
 } from "./pages"
 
 import React, {useState, useEffect, useReducer} from "react"
@@ -22,6 +23,7 @@ function App() {
         <Route path="/about" element={<About/>}/>
         <Route path="/event" element={<Event/>}/>
         <Route path="/contact" element={<Contact/>}/>
+        <Route path="*" element={<Whoops404/>}/>
       </Routes>
     </div>
   )
